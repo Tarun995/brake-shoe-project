@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load(r"D:\New volume 1\sem 3\projects\Brake Shoes\models\defect_model.joblib")
+model = joblib.load("models/defect_model.joblib")
+
 
 st.title("Brake Pad Defect Probability Dashboard")
 
