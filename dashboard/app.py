@@ -4,11 +4,22 @@ import joblib
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import os
 
-# Load model
-model = joblib.load("../models/defect_model.joblib")
+# ---------------------------------------------------------
+# FIX: SAFE MODEL PATH (WORKS ON STREAMLIT CLOUD & LOCAL)
+# ---------------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "..", "models", "defect_model.joblib")
 
+# Debug (optional)
+# st.write("Model path:", MODEL_PATH)
 
+model = joblib.load(MODEL_PATH)
+
+# ---------------------------------------------------------
+# STREAMLIT APP CONFIG
+# ---------------------------------------------------------
 st.set_page_config(page_title="Brake Pad Defect Dashboard", layout="wide")
 
 # ---- HEADER ----
