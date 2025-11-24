@@ -6,7 +6,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Load model
-model = joblib.load(r"D:\New volume 1\sem 3\projects\Brake Shoes\models\defect_model.joblib")
+model = joblib.load("../models/defect_model.joblib")
+
 
 st.set_page_config(page_title="Brake Pad Defect Dashboard", layout="wide")
 
